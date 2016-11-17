@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+/* inställningar sticky footer */
+
+
+/*  
+Sticky Footer Solution
+by Steve Hatcher 
+http://stever.ca
+http://www.cssstickyfooter.com
+*/
+
+
+/* * {margin:0;padding:0;} inställning redan utförd för berörda element */
+
+
+/* must declare 0 margins on everything, also for main layout components use padding, not 
+vertical margins (top and bottom) to add spacing, else those margins get added to total height 
+and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
+
+html,
+body {
+    height: 100%;
+}
+
+#wrapper {
+    min-height: 100%;
+}
+
+main {
+    overflow: auto;
+    padding-bottom: 50px;
+}
+
+
+/* must be same height as the footer */
+
+footer {
+    position: relative;
+    margin-top: -50px;
+    /* negative value of footer height */
+    height: 30px;
+    clear: both;
+}
+
+
+/* Endast 20px, eftersom footer har padding på 10px, så höjden blir 40px */
+
+
+/*Opera Fix*/
+
+body:before {
+    /* thanks to Maleika (Kohoutec)*/
+    content: "";
+    height: 100%;
+    float: left;
+    width: 0;
+    margin-top: -32767px;
+    /* thank you Erik J - negate effect of float*/
+}
+
+
+/* IMPORTANT
+You also need to include this conditional style in the <head> of your HTML file to feed this style to IE 6 and lower and 8 and higher.
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+*/
+
+
+/* end sticky footer inställningar */
+
+
+/* ----- Layout ----- */
+
+body {
+    background-image: url(pics/background2.jpg);
+    background-repeat: repeat;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+/* inställningar Wrapper */
+
+#wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* inställningar header */
+
+header {
+    width: 100%;
+    height: auto;
+    padding: 2%;
+}
+
+h1 {
+    font-size: 3.2em;
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px 5px white;
+    clear: both;
+}
+
+main:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* för att fylla ut kolumnen i main */
+
+
+/* inställningar innehåll */
+
+#createList {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 94%;
+    margin: 0 auto;
+    padding: 1%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    margin-left: 2%;
+    margin-right: 2%;
+    color: white;
+}
+
+
+/* Inställningar input-fält */
+
+input {
+    width: 35%;
+    margin: 20px;
+    margin-top: 0;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+#addTask {
+    padding: 3px;
+    border-radius: 2px;
+    margin: 20px;
+    margin-top: 0;
+}
+
+
+/* Inställningar listor */
+
+#myList {
+    width: 44%;
+    margin-left: 2%;
+    float: left;
+    padding: 1%;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+
+#doneTasks {
+    width: 45%;
+    margin-right: 2%;
+    float: right;
+    padding: 1%;
+    background-color: rgba(0, 255, 0, 0.5);
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+
+li {
+    font-size: 14px;
+    clear: both;
+}
+
+#tasks {
+    border-bottom: 1px solid white;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+    color: white;
+    word-wrap: break-word;
+}
+
+
+/* Inställningar knappar */
+
+#buttons {
+    display: block;
+}
+
+#move {
+    border-radius: 2px;
+    background-color: seagreen;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+#delete {
+    margin-left: 5px;
+    border-radius: 2px;
+    background-color: darkred;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+#myList h3,
+#doneTasks h3 {
+    margin-left: 0;
+    color: white;
+}
+
+
+/* inställningar footer */
+
+footer {
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 100%;
+    clear: both;
+    background-position: bottom;
+}
+
+
+/* inställningar media queries */
+
+@media screen and (max-width:415px) {
+    h1 {
+        font-size: 2em;
+    }
+    #doneTasks {
+        width: 94%;
+        display: block;
+    }
+    #myList {
+        width: 94%;
+        display: block;
+    }
+    #createList {
+        margin-bottom: 0;
+    }
+}
