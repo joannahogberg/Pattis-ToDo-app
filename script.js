@@ -164,7 +164,6 @@ function doneTasks() {
     }
 
 
-
 }
 
 //Funktion som raderar de uppgifter användaren vill ta bort helt
