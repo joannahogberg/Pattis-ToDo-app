@@ -151,10 +151,12 @@ input {
 }
 
 #addTask {
-    padding: 3px;
+     padding: 4px;
     border-radius: 2px;
     margin: 20px;
     margin-top: 0;
+    background-color: black;
+    color: white;
 }
 
 
