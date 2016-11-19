@@ -29,7 +29,7 @@ body {
 
 main {
     overflow: auto;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 
@@ -94,17 +94,20 @@ body {
 /* inställningar header */
 
 header {
-    width: 100%;
+    width: 96%;
     height: auto;
-    padding: 2%;
+    margin: 0 auto;
 }
 
 h1 {
     font-size: 3.2em;
     text-align: center;
-    color: black;
-    text-shadow: 2px 2px 5px white;
+    color: white;
+    text-shadow: 2px 2px 5px black;
     clear: both;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1%;
+    border-radius: 5px;
 }
 
 main:after {
@@ -120,13 +123,12 @@ main:after {
 /* inställningar innehåll */
 
 #createList {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     text-align: center;
     width: 94%;
     margin: 0 auto;
     padding: 1%;
     border-radius: 5px;
-    margin-bottom: 20px;
 }
 
 h3 {
@@ -151,7 +153,7 @@ input {
 }
 
 #addTask {
-     padding: 4px;
+    padding: 4px;
     border-radius: 2px;
     margin: 20px;
     margin-top: 0;
@@ -167,7 +169,7 @@ input {
     margin-left: 2%;
     float: left;
     padding: 1%;
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(179, 0, 0, 0.7);
     border-radius: 5px;
     margin-bottom: 3%;
 }
@@ -177,7 +179,7 @@ input {
     margin-right: 2%;
     float: right;
     padding: 1%;
-    background-color: rgba(0, 255, 0, 0.5);
+    background-color: rgba(21, 132, 21, 0.7);
     border-radius: 5px;
     margin-bottom: 3%;
 }
@@ -241,9 +243,25 @@ footer {
 
 /* inställningar media queries */
 
-@media screen and (max-width:415px) {
+@media screen and (max-width:450px) {
     h1 {
-        font-size: 2em;
+        font-size: 1.5em;
+        padding: 1em;
+    }
+    #createList {
+        margin-bottom: 0;
+    }
+    input {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        margin-bottom: 15px;
+    }
+    main {
+        padding-bottom: 15px;
+    }
+    p {
+        font-size: 1.1em;
     }
     #doneTasks {
         width: 94%;
@@ -252,8 +270,5 @@ footer {
     #myList {
         width: 94%;
         display: block;
-    }
-    #createList {
-        margin-bottom: 0;
     }
 }
