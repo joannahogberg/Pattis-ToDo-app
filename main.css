@@ -76,7 +76,7 @@ You also need to include this conditional style in the <head> of your HTML file 
 /* ----- Layout ----- */
 
 body {
-    background-image: url(pics/background2.jpg);
+    background-image: url(background2.jpg);
     background-repeat: repeat;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
