@@ -76,7 +76,7 @@ You also need to include this conditional style in the <head> of your HTML file 
 /* ----- Layout ----- */
 
 body {
-    background-image: url(background2.jpg);
+    background-image: url(pics/background2.jpg);
     background-repeat: repeat;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -157,8 +157,12 @@ input {
     border-radius: 2px;
     margin: 20px;
     margin-top: 0;
-    background-color: black;
+    background-color: #262626;
     color: white;
+}
+
+#addTask:hover {
+    background-color: rgba(21, 132, 21, 0.7);
 }
 
 
@@ -191,6 +195,7 @@ li {
 
 #tasks {
     border-bottom: 1px solid white;
+    margin-right: 1em;
     padding-bottom: 1%;
     margin-bottom: 2%;
     color: white;
@@ -213,6 +218,10 @@ li {
     border-radius: 2px;
 }
 
+#move:hover {
+    color: black;
+}
+
 #delete {
     margin-left: 5px;
     border-radius: 2px;
@@ -221,6 +230,10 @@ li {
     margin-bottom: 10px;
     margin-top: 10px;
     border-radius: 2px;
+}
+
+#delete:hover {
+    color: black;
 }
 
 #myList h3,
