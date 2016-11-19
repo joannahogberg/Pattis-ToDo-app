@@ -256,6 +256,21 @@ footer {
 
 /* inställningar media queries */
 
+@media screen and (max-width:500px) {
+    #addTask {
+        font-size: 1.2em;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    input {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        margin-bottom: 15px;
+    }
+}
+
 @media screen and (max-width:450px) {
     h1 {
         font-size: 1.5em;
