@@ -76,10 +76,11 @@ You also need to include this conditional style in the <head> of your HTML file 
 /* ----- Layout ----- */
 
 body {
-    background-image: url(background2.jpg);
+    background-image: url(pics/background2.jpg);
     background-repeat: repeat;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
+    text-align: center;
 }
 
 
@@ -101,7 +102,6 @@ header {
 
 h1 {
     font-size: 3.2em;
-    text-align: center;
     color: white;
     text-shadow: 2px 2px 5px black;
     clear: both;
@@ -110,29 +110,15 @@ h1 {
     border-radius: 5px;
 }
 
-main:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-
-/* för att fylla ut kolumnen i main */
-
 
 /* inställningar innehåll */
 
 #createList {
     background-color: rgba(0, 0, 0, 0.7);
-    text-align: center;
     width: 94%;
     margin: 0 auto;
     padding: 1%;
     border-radius: 5px;
-}
-
-h3 {
-    text-align: center;
 }
 
 p {
@@ -168,29 +154,30 @@ input {
 
 /* Inställningar listor */
 
-#myList {
+#myList,
+#doneTasks {
     width: 44%;
-    margin-left: 2%;
-    float: left;
     padding: 1%;
-    background-color: rgba(179, 0, 0, 0.7);
     border-radius: 5px;
     margin-bottom: 3%;
 }
 
+#myList {
+    float: left;
+    margin-left: 2%;
+    background-color: rgba(179, 0, 0, 0.7);
+}
+
 #doneTasks {
-    width: 45%;
     margin-right: 2%;
     float: right;
-    padding: 1%;
     background-color: rgba(21, 132, 21, 0.7);
-    border-radius: 5px;
-    margin-bottom: 3%;
 }
 
 li {
     font-size: 14px;
     clear: both;
+    text-align: left;
 }
 
 #tasks {
@@ -203,19 +190,23 @@ li {
 }
 
 
-/* Inställningar knappar */
+/* Inställningar knappar i listorna*/
 
 #buttons {
     display: block;
 }
 
-#move {
+#move,
+#delete {
     border-radius: 2px;
-    background-color: seagreen;
     color: white;
     margin-bottom: 10px;
     margin-top: 10px;
     border-radius: 2px;
+}
+
+#move {
+    background-color: seagreen;
 }
 
 #move:hover {
@@ -224,12 +215,7 @@ li {
 
 #delete {
     margin-left: 5px;
-    border-radius: 2px;
     background-color: darkred;
-    color: white;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border-radius: 2px;
 }
 
 #delete:hover {
@@ -243,20 +229,9 @@ li {
 }
 
 
-/* inställningar footer */
-
-footer {
-    margin: 0 auto;
-    padding: 10px;
-    max-width: 100%;
-    clear: both;
-    background-position: bottom;
-}
-
-
 /* inställningar media queries */
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:550px) {
     #addTask {
         font-size: 1.2em;
         display: block;
@@ -269,34 +244,22 @@ footer {
         width: 80%;
         margin-bottom: 15px;
     }
-}
-
-@media screen and (max-width:450px) {
+    #doneTasks,
+    #myList {
+        width: 94%;
+        display: block;
+    }
     h1 {
-        font-size: 1.5em;
+        font-size: 1.7em;
         padding: 1em;
     }
     #createList {
         margin-bottom: 0;
-    }
-    input {
-        display: block;
-        margin: 0 auto;
-        width: 80%;
-        margin-bottom: 15px;
     }
     main {
         padding-bottom: 15px;
     }
     p {
         font-size: 1.1em;
-    }
-    #doneTasks {
-        width: 94%;
-        display: block;
-    }
-    #myList {
-        width: 94%;
-        display: block;
     }
 }
