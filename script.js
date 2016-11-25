@@ -1,21 +1,24 @@
 //Kod för struktur av sidan samt 
+
+//Skapar och lägger till div för wrapper
 var wrapper = document.createElement('div');
 wrapper.id = 'wrapper';
 document.body.appendChild(wrapper);
 
+//Skapar och lägger till div för header
 var header = document.createElement('header');
 wrapper.appendChild(header);
 
 var h1 = document.createElement('h1');
 header.appendChild(h1);
-
-
-var head1 = document.createTextNode("Create your own ToDo-List");
+var head1 = document.createTextNode("Make a ToDo-List");
 h1.appendChild(head1);
 
+//Skapar och lägger till div för main
 var main = document.createElement('main');
 wrapper.appendChild(main);
 
+//skapar och lägger till div för info-box för att lägga till tasks
 var div = document.createElement('div');
 div.id = 'createList';
 main.appendChild(div);
@@ -40,8 +43,9 @@ p.appendChild(info);
 
 var input = document.createElement('input');
 input.id = 'input';
+input.setAttribute('onkeypress', 'return enterOnKeyPress(event)') //lägger till händelsehanterare för enterknapp
+input.setAttribute('placeholder', 'Enter task here');
 div.appendChild(input);
-
 
 var addBtn = document.createElement('button');
 var plus = document.createTextNode("ADD TASK");
@@ -52,14 +56,14 @@ div.appendChild(addBtn);
 //Vid klick så anropas funktionen add
 document.getElementById("addTask").onclick = add;
 
-
+//skapar och lägger till div-box för toDo-lista
 var list1 = document.createElement('div');
 wrapper.appendChild(list1);
 list1.id = 'myList';
 
 var h3ToDo = document.createElement('h3');
-var headToDo = document.createTextNode("MY ToDo LIST:");
-h3ToDo.style.textAlign = "center";
+var headToDo = document.createTextNode("ToDo LIST:");
+
 h3ToDo.appendChild(headToDo);
 list1.appendChild(h3ToDo);
 
@@ -67,15 +71,14 @@ var toDo = document.createElement('ul');
 toDo.id = 'toDo';
 list1.appendChild(toDo);
 
-
+//skapar och lägger til div-box för done-lista
 var list2 = document.createElement('div');
 wrapper.appendChild(list2);
 list2.id = 'doneTasks';
 
-
 var h3Done = document.createElement('h3');
-var headDone = document.createTextNode("MY DONE LIST:");
-h3Done.style.textAlign = "center";
+var headDone = document.createTextNode("DONE LIST:");
+
 h3Done.appendChild(headDone);
 list2.appendChild(h3Done);
 
@@ -97,6 +100,13 @@ function add() {
         document.getElementById("input").value = ''; //tömmer inputrutan
     } else {
         alert("Please add a task!");
+    }
+}
+
+//Om användaren klickar på Enter anropas add funktionen
+function enterOnKeyPress(event) {
+    if (window.event.keyCode == '13') {
+        add();
     }
 }
 
@@ -162,6 +172,7 @@ function doneTasks() {
         document.getElementById("move").title = "Move to list of tasks done";
         task.style.textDecoration = "none";
     }
+
 
 
 }
